@@ -39,7 +39,7 @@ just after a jump so a jump never fires a phantom roll.
 ## Get it running
 
 ```bash
-git clone <this repo> subway-movers
+git clone https://github.com/StepanBlaha/subway-movers.git
 cd subway-movers
 npm install
 npm run dev
@@ -124,11 +124,9 @@ marketing page (no build step, no external fonts or scripts) that mirrors the
 app's branding. It's set up to be served straight out of `docs/`, which is
 GitHub Pages' default publish folder:
 
-1. Push this repo to GitHub.
-2. Repo Settings, then **Pages**, then set Source to the `main` branch and
+1. Repo Settings, then **Pages**, then set Source to the `main` branch and
    the `/docs` folder.
-3. Before publishing, replace the two `YOUR_USERNAME/subway-movers` links in
-   `docs/index.html` with your actual repo URL.
+2. It publishes at `https://stepanblaha.github.io/subway-movers/`.
 
 Any static host works the same way, since it's just `index.html`, `site.css`,
 and `logo.svg`: Netlify (drag the `docs/` folder in), Vercel (`vercel deploy
