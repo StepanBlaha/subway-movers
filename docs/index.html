@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subway Movers, play with your body</title>
+    <meta
+      name="description"
+      content="Subway Movers is a tiny always-on-top desktop app that watches you through the webcam and turns your steps, jumps, and ducks into arrow-key taps for Subway Surfers."
+    />
+    <meta name="theme-color" content="#f6f3ec" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Arial' font-weight='900' font-size='46' fill='%2316a34a' stroke='%23141414' stroke-width='4' stroke-linejoin='round' paint-order='stroke fill'%3ES%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <div class="wrap nav">
+      <div class="brand">
+        <img src="logo.svg" width="26" height="26" alt="" />
+        Subway Movers
+      </div>
+      <nav>
+        <a class="navlink" href="#how-it-plays">How it plays</a>
+        <a class="navlink" href="#get-it">Get it</a>
+        <a class="navlink" href="https://github.com/YOUR_USERNAME/subway-movers">GitHub</a>
+      </nav>
+    </div>
+
+    <header class="hero">
+      <div class="stickerField" aria-hidden="true">
+        <span class="s s1">NO CAP</span>
+        <span class="s s2">TAP TAP</span>
+        <span class="s s3">RUN!</span>
+        <span class="s s4">&larr;&rarr;</span>
+        <span class="s s5">v1</span>
+      </div>
+      <div class="wrap content">
+        <div class="heroMark">
+          <img src="logo.svg" width="88" height="88" alt="Subway Movers logo" />
+        </div>
+        <span class="eyebrow">Body-controlled Subway Surfers</span>
+        <h1 class="tagH1">
+          <span class="tagWord w1">Subway</span>
+          <span class="tagWord w2">Movers</span>
+        </h1>
+        <p class="tagline">
+          A tiny always-on-top window watches you through the webcam and turns
+          your steps, jumps, and ducks into arrow-key taps, straight into the
+          web game or BlueStacks.
+        </p>
+        <div class="ctaRow">
+          <a class="btn primary" href="#get-it">Get it running</a>
+          <a class="btn ghost" href="https://github.com/YOUR_USERNAME/subway-movers">View on GitHub</a>
+        </div>
+        <div class="keyRow">
+          <span class="keyChip">&#9664; &#9654; lean = lane</span>
+          <span class="keyChip">&#9650; jump</span>
+          <span class="keyChip">&#9660; duck</span>
+          <span class="keyChip">macOS + Windows</span>
+        </div>
+      </div>
+    </header>
+
+    <section id="how-it-plays">
+      <div class="wrap">
+        <div class="sectionTitle reveal">No sensors, no controller</div>
+        <h2 class="sectionHead reveal">How it plays</h2>
+        <div class="moveGrid">
+          <div class="moveCard reveal">
+            <div class="glyph">&larr;</div>
+            <h3>Lean left</h3>
+            <p>Step or lean left to switch a lane. Moves are relative to wherever you're standing.</p>
+          </div>
+          <div class="moveCard reveal">
+            <div class="glyph">&rarr;</div>
+            <h3>Lean right</h3>
+            <p>Same idea, mirrored. One sidestep never drifts you out of frame.</p>
+          </div>
+          <div class="moveCard reveal">
+            <div class="glyph">&uarr;</div>
+            <h3>Jump</h3>
+            <p>Jump up in place to clear a hurdle. Locked out right after so it never fires a duck too.</p>
+          </div>
+          <div class="moveCard reveal">
+            <div class="glyph">&darr;</div>
+            <h3>Duck</h3>
+            <p>Crouch to roll under a barrier. Pose detection runs fully on-device via MediaPipe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="get-it">
+      <div class="wrap">
+        <div class="sectionTitle reveal">Two minutes, one webcam</div>
+        <h2 class="sectionHead reveal">Get it running</h2>
+        <div class="codeCard reveal">
+          <div class="codeBlock"><span class="cmt"># clone and install</span>
+git clone https://github.com/YOUR_USERNAME/subway-movers.git
+cd subway-movers
+npm install
+npm run dev</div>
+        </div>
+        <ul class="stepList">
+          <li class="reveal"><b>01</b> A frameless window drops into the top-left corner and floats above everything, even fullscreen games.</li>
+          <li class="reveal"><b>02</b> Pick a target, Web or BlueStacks, and hit Play. Grant camera access when asked.</li>
+          <li class="reveal"><b>03</b> Step back until your whole body is in frame during the countdown.</li>
+          <li class="reveal"><b>04</b> Stand neutral through the short calibration, then move to play.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="wrap">
+        <div class="sectionTitle reveal">Under the hood</div>
+        <h2 class="sectionHead reveal">Built with</h2>
+        <div class="techRow">
+          <span class="techChip reveal">Electron</span>
+          <span class="techChip reveal">React</span>
+          <span class="techChip reveal">TypeScript</span>
+          <span class="techChip reveal">MediaPipe tasks-vision</span>
+          <span class="techChip reveal">nut.js</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        Full setup, tuning, and permissions in the
+        <a href="https://github.com/YOUR_USERNAME/subway-movers#readme">README</a>.
+      </div>
+    </footer>
+
+    <script>
+      var els = document.querySelectorAll(".reveal");
+      var groups = {};
+      els.forEach(function (el, i) {
+        var parent = el.closest("section") || document.body;
+        groups[parent] = groups[parent] || 0;
+        var order = groups[parent]++;
+        el.style.transitionDelay = Math.min(order * 70, 400) + "ms";
+      });
+
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      );
+      els.forEach(function (el) {
+        io.observe(el);
+      });
+    </script>
+  </body>
+</html>

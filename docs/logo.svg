@@ -1,0 +1,16 @@
+<svg width="96" height="96" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <text
+    x="32"
+    y="46"
+    text-anchor="middle"
+    font-family="'Arial Rounded MT Bold','Helvetica Neue',Arial,sans-serif"
+    font-weight="900"
+    font-size="46"
+    fill="#16a34a"
+    stroke="#141414"
+    stroke-width="4"
+    stroke-linejoin="round"
+    paint-order="stroke fill"
+  >S</text>
+  <path d="M20,17 q7,-6 14,-1" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8" />
+</svg>
