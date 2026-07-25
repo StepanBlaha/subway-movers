@@ -1,163 +1,85 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Subway Movers, play with your body</title>
-    <meta
-      name="description"
-      content="Subway Movers is a tiny always-on-top desktop app that watches you through the webcam and turns your steps, jumps, and ducks into arrow-key taps for Subway Surfers."
-    />
-    <meta name="theme-color" content="#f6f3ec" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Arial' font-weight='900' font-size='46' fill='%2316a34a' stroke='%23141414' stroke-width='4' stroke-linejoin='round' paint-order='stroke fill'%3ES%3C/text%3E%3C/svg%3E"
-    />
-    <link rel="stylesheet" href="site.css" />
-  </head>
-  <body>
-    <div class="wrap nav">
-      <div class="brand">
-        <img src="logo.svg" width="26" height="26" alt="" />
-        Subway Movers
-      </div>
-      <nav>
-        <a class="navlink" href="#how-it-plays">How it plays</a>
-        <a class="navlink" href="#get-it">Get it</a>
-        <a class="navlink" href="https://github.com/StepanBlaha/subway-movers">GitHub</a>
-      </nav>
-    </div>
-
-    <header class="hero">
-      <div class="stickerField" aria-hidden="true">
-        <span class="s s1">NO CAP</span>
-        <span class="s s2">TAP TAP</span>
-        <span class="s s3">RUN!</span>
-        <span class="s s4">&larr;&rarr;</span>
-        <span class="s s5">v1</span>
-      </div>
-      <div class="wrap content">
-        <div class="heroMark">
-          <img src="logo.svg" width="88" height="88" alt="Subway Movers logo" />
-        </div>
-        <span class="eyebrow">Body-controlled Subway Surfers</span>
-        <h1 class="tagH1">
-          <span class="tagWord w1">Subway</span>
-          <span class="tagWord w2">Movers</span>
-        </h1>
-        <p class="tagline">
-          A tiny always-on-top window watches you through the webcam and turns
-          your steps, jumps, and ducks into arrow-key taps, straight into the
-          web game or BlueStacks.
-        </p>
-        <div class="ctaRow">
-          <a class="btn primary" href="#get-it">Get it running</a>
-          <a class="btn ghost" href="https://github.com/StepanBlaha/subway-movers">View on GitHub</a>
-        </div>
-        <div class="keyRow">
-          <span class="keyChip">&#9664; &#9654; lean = lane</span>
-          <span class="keyChip">&#9650; jump</span>
-          <span class="keyChip">&#9660; duck</span>
-          <span class="keyChip">macOS + Windows</span>
-        </div>
-      </div>
-    </header>
-
-    <section id="how-it-plays">
-      <div class="wrap">
-        <div class="sectionTitle reveal">No sensors, no controller</div>
-        <h2 class="sectionHead reveal">How it plays</h2>
-        <div class="moveGrid">
-          <div class="moveCard reveal">
-            <div class="glyph">&larr;</div>
-            <h3>Lean left</h3>
-            <p>Step or lean left to switch a lane. Moves are relative to wherever you're standing.</p>
-          </div>
-          <div class="moveCard reveal">
-            <div class="glyph">&rarr;</div>
-            <h3>Lean right</h3>
-            <p>Same idea, mirrored. One sidestep never drifts you out of frame.</p>
-          </div>
-          <div class="moveCard reveal">
-            <div class="glyph">&uarr;</div>
-            <h3>Jump</h3>
-            <p>Jump up in place to clear a hurdle. Locked out right after so it never fires a duck too.</p>
-          </div>
-          <div class="moveCard reveal">
-            <div class="glyph">&darr;</div>
-            <h3>Duck</h3>
-            <p>Crouch to roll under a barrier. Pose detection runs fully on-device via MediaPipe.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="get-it">
-      <div class="wrap">
-        <div class="sectionTitle reveal">Two minutes, one webcam</div>
-        <h2 class="sectionHead reveal">Get it running</h2>
-        <div class="codeCard reveal">
-          <div class="codeBlock"><span class="cmt"># clone and install</span>
-git clone https://github.com/StepanBlaha/subway-movers.git
-cd subway-movers
-npm install
-npm run dev</div>
-        </div>
-        <ul class="stepList">
-          <li class="reveal"><b>01</b> A frameless window drops into the top-left corner and floats above everything, even fullscreen games.</li>
-          <li class="reveal"><b>02</b> Pick a target, Web or BlueStacks, and hit Play. Grant camera access when asked.</li>
-          <li class="reveal"><b>03</b> Step back until your whole body is in frame during the countdown.</li>
-          <li class="reveal"><b>04</b> Stand neutral through the short calibration, then move to play.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="stack">
-      <div class="wrap">
-        <div class="sectionTitle reveal">Under the hood</div>
-        <h2 class="sectionHead reveal">Built with</h2>
-        <div class="techRow">
-          <span class="techChip reveal">Electron</span>
-          <span class="techChip reveal">React</span>
-          <span class="techChip reveal">TypeScript</span>
-          <span class="techChip reveal">MediaPipe tasks-vision</span>
-          <span class="techChip reveal">nut.js</span>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="wrap">
-        Full setup, tuning, and permissions in the
-        <a href="https://github.com/StepanBlaha/subway-movers#readme">README</a>.
-      </div>
-    </footer>
-
-    <script>
-      var els = document.querySelectorAll(".reveal");
-      var groups = {};
-      els.forEach(function (el, i) {
-        var parent = el.closest("section") || document.body;
-        groups[parent] = groups[parent] || 0;
-        var order = groups[parent]++;
-        el.style.transitionDelay = Math.min(order * 70, 400) + "ms";
-      });
-
-      var io = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("in");
-              io.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-      );
-      els.forEach(function (el) {
-        io.observe(el);
-      });
-    </script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subway Movers — Sticker Slap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&family=VT323&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+a{color:inherit}
+/* section appears on scroll; --rot preserves each sticker's rotation */
+.mv-reveal{opacity:0;transform:translateY(30px);transition:opacity .55s ease,transform .7s cubic-bezier(.2,.75,.25,1)}
+.mv-reveal.mv-in{opacity:1;transform:none}
+/* cards pop in (staggered via inline delay), then lift on hover */
+.mv-card{--rot:0deg;opacity:0;transform:translateY(26px) rotate(var(--rot)) scale(.92);
+  transition:opacity .5s ease,transform .5s cubic-bezier(.34,1.45,.5,1),box-shadow .18s ease}
+.mv-in .mv-card{opacity:1;transform:rotate(var(--rot))}
+.mv-in .mv-card:hover{transform:rotate(var(--rot)) translateY(-9px) scale(1.05);
+  box-shadow:7px 13px 24px rgba(0,0,0,.36);z-index:20;position:relative;transition-delay:0s}
+/* buttons + link chips: keep their tilt at rest, lift on hover */
+.mv-btn{--rot:0deg;transform:rotate(var(--rot));transition:transform .16s cubic-bezier(.34,1.56,.64,1),box-shadow .16s ease}
+.mv-btn:hover{transform:rotate(var(--rot)) translateY(-5px) scale(1.06);box-shadow:7px 13px 24px rgba(0,0,0,.36)}
+.mv-btn:active{transform:rotate(var(--rot)) translateY(-1px) scale(.99)}
+@media (prefers-reduced-motion:reduce){
+  .mv-reveal,.mv-card{opacity:1!important;transform:none!important;transition:none!important}
+  .mv-btn{transition:none!important}
+}
+</style>
+</head><body style="min-height:100vh;background:linear-gradient(135deg,#cfd3d8,#eef1f4 45%,#c7cbd1) fixed;color:#151515;">
+<div style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;background:repeating-linear-gradient(90deg,rgba(255,255,255,.5) 0 1px,transparent 1px 4px);"></div>
+<div style="max-width:1180px;margin:0 auto;position:relative;z-index:1;color:#151515;">
+<div style="position:relative;z-index:5;padding:44px 46px 40px;">
+  <div style="position:absolute;top:40px;right:44px;background:#ffcf00;color:#111;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'Bungee',sans-serif;font-size:16px;padding:14px;transform:rotate(12deg);text-align:center;line-height:1;">100%<br>FREE</div>
+  <div style="position:absolute;top:150px;right:120px;background:#00c98a;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'Permanent Marker',cursive;font-size:20px;padding:6px 12px;transform:rotate(-8deg);">no hands!</div>
+  <div style="display:inline-block;background:#ff3d7f;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'Bungee',sans-serif;font-size:52px;padding:14px 22px;transform:rotate(-3deg);">SUBWAY MOVERS</div>
+  <div style="max-width:640px;margin-top:24px;">
+    <div style="font-family:'Bungee',sans-serif;font-size:44px;line-height:1;color:#151515;">STOP TAPPING. <span style="color:#ff3d7f;">START MOVING.</span></div>
+    <p style="font-family:'VT323',monospace;font-size:22px;line-height:1.4;color:#333;margin-top:14px;">Play the endless subway runner with your whole body. The webcam reads you — lean, jump &amp; duck for real. Browser or desktop.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:24px;">
+    <a href="https://github.com/StepanBlaha/subway-movers#readme" style="background:#00b2ff;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'Bungee',sans-serif;font-size:24px;padding:16px 28px;text-decoration:none;transform:rotate(-1deg);">⬇ DOWNLOAD FREE</a>
+    <a href="https://github.com/StepanBlaha/subway-movers" style="background:#fff;color:#7b2ff7;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'Bungee',sans-serif;font-size:15px;padding:12px 18px;text-decoration:none;transform:rotate(1deg);">★ STAR ON GITHUB</a>
+    <span style="background:#111;color:#00c98a;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'VT323',monospace;font-size:18px;padding:8px 12px;">100% on-device</span>
+  </div>
+</div>
+<div style="position:relative;z-index:5;padding:18px 46px 40px;"><div style="display:inline-block;margin-bottom:18px;background:#7b2ff7;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'Bungee',sans-serif;font-size:30px;padding:8px 18px;transform:rotate(-1.5deg);">HOW IT WORKS</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;"><div style="background:#fff;color:#151515;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:20px;transform:rotate(-1.5deg);"><div style="font-family:'Bungee',sans-serif;font-size:40px;color:#ff3d7f;">01</div><div style="font-family:'Bungee',sans-serif;font-size:26px;color:#151515;">LEAN</div><div style="font-family:'VT323',monospace;font-size:18px;color:#444;margin-top:6px;line-height:1.35;">Sway left &amp; right to jump between the tracks.</div></div><div style="background:#fff;color:#151515;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:20px;transform:rotate(1deg);"><div style="font-family:'Bungee',sans-serif;font-size:40px;color:#ff3d7f;">02</div><div style="font-family:'Bungee',sans-serif;font-size:26px;color:#151515;">JUMP</div><div style="font-family:'VT323',monospace;font-size:18px;color:#444;margin-top:6px;line-height:1.35;">Hop for real to leap over the barriers.</div></div><div style="background:#fff;color:#151515;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:20px;transform:rotate(-1deg);"><div style="font-family:'Bungee',sans-serif;font-size:40px;color:#ff3d7f;">03</div><div style="font-family:'Bungee',sans-serif;font-size:26px;color:#151515;">DUCK</div><div style="font-family:'VT323',monospace;font-size:18px;color:#444;margin-top:6px;line-height:1.35;">Crouch down to slide clean under the signs.</div></div></div></div>
+<div style="position:relative;z-index:5;padding:18px 46px 40px;"><div style="display:inline-block;margin-bottom:18px;background:#7b2ff7;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'Bungee',sans-serif;font-size:30px;padding:8px 18px;transform:rotate(-1.5deg);">WHY IT RIPS</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;"><div style="background:#fff;color:#151515;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:16px;"><div style="font-family:'Bungee',sans-serif;font-size:18px;color:#00b2ff;">NO CONTROLLER</div><div style="font-family:'VT323',monospace;font-size:16px;color:#444;margin-top:6px;line-height:1.35;">Zero gamepads, zero keyboard. You are the input.</div></div><div style="background:#fff;color:#151515;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:16px;"><div style="font-family:'Bungee',sans-serif;font-size:18px;color:#00b2ff;">ANY WEBCAM</div><div style="font-family:'VT323',monospace;font-size:16px;color:#444;margin-top:6px;line-height:1.35;">Built-in laptop cam or cheap USB one — both work.</div></div><div style="background:#fff;color:#151515;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:16px;"><div style="font-family:'Bungee',sans-serif;font-size:18px;color:#00b2ff;">RUNS IN BROWSER</div><div style="font-family:'VT323',monospace;font-size:16px;color:#444;margin-top:6px;line-height:1.35;">Nothing to install. Click, allow camera, run.</div></div><div style="background:#fff;color:#151515;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:16px;"><div style="font-family:'Bungee',sans-serif;font-size:18px;color:#00b2ff;">LOW LATENCY</div><div style="font-family:'VT323',monospace;font-size:16px;color:#444;margin-top:6px;line-height:1.35;">Pose tracking tuned so your moves land instantly.</div></div><div style="background:#fff;color:#151515;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:16px;"><div style="font-family:'Bungee',sans-serif;font-size:18px;color:#00b2ff;">FULL BODY</div><div style="font-family:'VT323',monospace;font-size:16px;color:#444;margin-top:6px;line-height:1.35;">Get off the couch. Actual cardio disguised as a game.</div></div><div style="background:#fff;color:#151515;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:16px;"><div style="font-family:'Bungee',sans-serif;font-size:18px;color:#00b2ff;">FREE FOREVER</div><div style="font-family:'VT323',monospace;font-size:16px;color:#444;margin-top:6px;line-height:1.35;">No paywall, no ads mid-run. Just play.</div></div></div></div>
+<div style="position:relative;z-index:5;padding:18px 46px 40px;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;"><div style="background:#fff;color:#151515;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:26px;"><div style="font-family:'Bungee',sans-serif;font-size:24px;color:#00b2ff;margin-bottom:10px;">You'll need</div><div style="font-family:'VT323',monospace;font-size:18px;color:#333;padding:7px 0;border-bottom:2px dotted #bbb;">▸ A webcam (laptop or USB)</div><div style="font-family:'VT323',monospace;font-size:18px;color:#333;padding:7px 0;border-bottom:2px dotted #bbb;">▸ A well-lit room + space to move</div><div style="font-family:'VT323',monospace;font-size:18px;color:#333;padding:7px 0;border-bottom:2px dotted #bbb;">▸ Chrome, Edge or Firefox — or the desktop app</div><div style="font-family:'VT323',monospace;font-size:18px;color:#333;padding:7px 0;border-bottom:2px dotted #bbb;">▸ About 2m² of clear floor</div></div><div style="background:#151515;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:26px;"><div style="font-family:'Permanent Marker',cursive;font-size:26px;color:#ffcf00;margin-bottom:10px;">the crew says</div><div style="margin-bottom:13px;"><div style="font-family:'Permanent Marker',cursive;font-size:18px;color:#fff;line-height:1.3;">“my downstairs neighbor hates me and my high score”</div><div style="font-family:'VT323',monospace;font-size:15px;color:#aaa;">— pixel_punk99</div></div><div style="margin-bottom:13px;"><div style="font-family:'Permanent Marker',cursive;font-size:18px;color:#fff;line-height:1.3;">“ten minutes in and i was SWEATING. love it”</div><div style="font-family:'VT323',monospace;font-size:15px;color:#aaa;">— runnerG</div></div><div style="margin-bottom:13px;"><div style="font-family:'Permanent Marker',cursive;font-size:18px;color:#fff;line-height:1.3;">“finally a reason to stand up”</div><div style="font-family:'VT323',monospace;font-size:15px;color:#aaa;">— couch2coach</div></div></div></div></div>
+<div style="position:relative;z-index:5;padding:18px 46px 40px;"><div style="display:inline-block;margin-bottom:18px;background:#7b2ff7;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'Bungee',sans-serif;font-size:30px;padding:8px 18px;transform:rotate(-1.5deg);">FAQ</div><div style="background:#fff;color:#151515;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);padding:28px;max-width:900px;"><div style="border-left:5px solid #ff3d7f;padding:2px 0 12px 14px;margin-bottom:12px;"><div style="font-family:'Bungee',sans-serif;font-size:18px;color:#151515;">Q: Does it store my camera feed?</div><div style="font-family:'VT323',monospace;font-size:16px;color:#444;margin-top:5px;line-height:1.4;">A: No. Pose tracking runs on-device; nothing is uploaded or recorded.</div></div><div style="border-left:5px solid #ff3d7f;padding:2px 0 12px 14px;margin-bottom:12px;"><div style="font-family:'Bungee',sans-serif;font-size:18px;color:#151515;">Q: Do I need a fancy computer?</div><div style="font-family:'VT323',monospace;font-size:16px;color:#444;margin-top:5px;line-height:1.4;">A: Nope. Any machine from the last few years handles it fine.</div></div><div style="border-left:5px solid #ff3d7f;padding:2px 0 12px 14px;margin-bottom:12px;"><div style="font-family:'Bungee',sans-serif;font-size:18px;color:#151515;">Q: How much room do I need?</div><div style="font-family:'VT323',monospace;font-size:16px;color:#444;margin-top:5px;line-height:1.4;">A: A couple of square meters. Leaning and a small jump is all it takes.</div></div><div style="border-left:5px solid #ff3d7f;padding:2px 0 12px 14px;margin-bottom:12px;"><div style="font-family:'Bungee',sans-serif;font-size:18px;color:#151515;">Q: Is it really free?</div><div style="font-family:'VT323',monospace;font-size:16px;color:#444;margin-top:5px;line-height:1.4;">A: Yes. Download or play in the browser — no cost, no catch.</div></div></div></div>
+<div style="position:relative;z-index:5;padding:20px 46px 44px;"><div style="text-align:center;"><div style="display:inline-block;background:#ff3d7f;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'Bungee',sans-serif;font-size:46px;padding:12px 26px;transform:rotate(-1.5deg);">READY? MOVE IT.</div><div style="margin-top:22px;"><a href="https://github.com/StepanBlaha/subway-movers#readme" style="background:#00b2ff;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'Bungee',sans-serif;font-size:26px;padding:18px 38px;text-decoration:none;">⬇ DOWNLOAD SUBWAY MOVERS</a></div></div></div>
+<div style="position:relative;z-index:5;padding:24px 46px 40px;"><div style="display:flex;flex-wrap:wrap;gap:12px;"><a href="https://github.com/StepanBlaha/subway-movers#readme" style="background:#ff3d7f;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'VT323',monospace;font-size:16px;padding:6px 12px;text-decoration:none;transform:rotate(-1deg);">DOWNLOAD</a><a href="https://github.com/StepanBlaha/subway-movers" style="background:#00c98a;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'VT323',monospace;font-size:16px;padding:6px 12px;text-decoration:none;transform:rotate(1deg);">GITHUB</a><a href="privacy.html" style="background:#7b2ff7;color:#fff;border:4px solid #fff;border-radius:16px;box-shadow:3px 5px 10px rgba(0,0,0,.28);font-family:'VT323',monospace;font-size:16px;padding:6px 12px;text-decoration:none;transform:rotate(-1deg);">PRIVACY</a></div><div style="font-family:'VT323',monospace;font-size:15px;color:#555;margin-top:12px;">© 2026 SUBWAY MOVERS — fan-made motion controller. Not affiliated with any game publisher.</div></div>
+</div>
+<script>
+(function(){
+  var root=document.querySelector('div[style*="max-width:1180px"]');
+  if(!root)return;
+  function rot(el){var m=(el.style.transform||'').match(/rotate\(([-0-9.]+)deg\)/);return m?m[1]+'deg':'0deg';}
+  // top-level section wrappers -> reveal on scroll
+  var blocks=[].filter.call(root.children,function(el){
+    var s=el.getAttribute('style')||'';return s.indexOf('z-index:5')>-1;
+  });
+  blocks.forEach(function(b){
+    b.classList.add('mv-reveal');
+    // stagger the sticker cards inside this block (skip absolute-positioned accents)
+    var cards=b.querySelectorAll('div[style*="box-shadow:3px 5px 10px"]');
+    var i=0;
+    [].forEach.call(cards,function(c){
+      if((c.getAttribute('style')||'').indexOf('position:absolute')>-1)return;
+      c.style.setProperty('--rot',rot(c));
+      c.style.transform='';            // let the class drive transform (inline would win otherwise)
+      c.classList.add('mv-card');
+      c.style.transitionDelay=Math.min(i++*70,420)+'ms';
+    });
+    // buttons + link chips: keep tilt at rest, lift on hover
+    var links=b.querySelectorAll('a[style*="box-shadow:3px 5px 10px"]');
+    [].forEach.call(links,function(a){
+      a.style.setProperty('--rot',rot(a));
+      a.style.transform='';            // class supplies rotate(var(--rot)) so hover can override it
+      a.classList.add('mv-btn');
+    });
+  });
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('mv-in');io.unobserve(e.target);}});
+  },{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+  blocks.forEach(function(b){io.observe(b);});
+})();
+</script>
+</body></html>

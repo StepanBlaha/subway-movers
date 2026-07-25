@@ -192,9 +192,9 @@ export default function App() {
               <span className="tagWord w2">Movers</span>
             </h1>
             <p className="tagline">
-              Play the real Subway Surfers with your body. Hit Play and it
-              opens the game, watches you through the webcam, and turns your
-              moves into key taps.
+              Stop tapping, start moving. Hit Play and it opens the runner,
+              watches you through the webcam, and turns your leans, jumps, and
+              ducks into key taps. No hands.
             </p>
             <div className="form">
               <div className="row">
