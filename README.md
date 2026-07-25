@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="docs/logo.svg" width="96" height="96" alt="Subway Movers logo" />
-
 # Subway Movers
 
 **Play the real Subway Surfers with your body.**
@@ -119,17 +117,19 @@ whatever window is focused, browser or emulator.
 
 ## Landing page
 
-[`docs/index.html`](docs/index.html) is a small, self-contained static
-marketing page (no build step, no external fonts or scripts) that mirrors the
-app's branding. It's set up to be served straight out of `docs/`, which is
+[`docs/index.html`](docs/index.html) is a self-contained "sticker slap"
+marketing page (no build step; styles are inline, fonts load from Google
+Fonts). A matching [`docs/privacy.html`](docs/privacy.html) covers the
+on-device privacy story. Both are served straight out of `docs/`, which is
 GitHub Pages' default publish folder:
 
 1. Repo Settings, then **Pages**, then set Source to the `main` branch and
    the `/docs` folder.
-2. It publishes at `https://stepanblaha.github.io/subway-movers/`.
+2. It publishes at `https://stepanblaha.github.io/subway-movers/`, with the
+   privacy page at `.../subway-movers/privacy.html`.
 
-Any static host works the same way, since it's just `index.html`, `site.css`,
-and `logo.svg`: Netlify (drag the `docs/` folder in), Vercel (`vercel deploy
+Any static host works the same way, since it's just `index.html` and
+`privacy.html`: Netlify (drag the `docs/` folder in), Vercel (`vercel deploy
 docs`), or Cloudflare Pages (build output directory `docs`).
 
 To preview it locally:
